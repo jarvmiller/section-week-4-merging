@@ -34,11 +34,7 @@ class Deck(object):
                 self.cards.append(card) # appends in a sorted order
 
     def __str__(self):
-        total = []
-        for card in self.cards:
-            total.append(card.__str__())
-        # shows up in whatever order the cards are in
-        return "\n".join(total) # returns a multi-line string listing each card
+        return "{0} of {1}".format(self.rank,self.suit)
 
     def pop_card(self, i=-1):
         return self.cards.pop(i) # this card is no longer in the deck -- taken off
@@ -63,7 +59,7 @@ class Deck(object):
     def deal_hand(self, hand_size):
         hand_cards = []
         for i in range(hand_size):
-            hand_cards.append(self.pop_card()) 
+            hand_cards.append(self.pop_card())
         return hand_cards
 
 
